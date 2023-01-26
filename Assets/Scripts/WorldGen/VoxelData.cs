@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class VoxelData
 {
+    public static readonly int ChunkWidth = 5;
+    public static readonly int ChunkHeight = 15;
+
     public static readonly Vector3[] voxelVerts = new Vector3[8]
     {
         // Each vector3 represents a verticie on a cube
@@ -15,6 +18,15 @@ public static class VoxelData
         new Vector3(1.0f, 0.0f, 1.0f),
         new Vector3(1.0f, 1.0f, 1.0f),
         new Vector3(0.0f, 1.0f, 1.0f)
+    };
+
+    public static readonly Vector3[] faceChecks = new Vector3[6]{
+        new Vector3(0.0f, 0.0f, -1.0f),
+        new Vector3(0.0f, 0.0f, 1.0f),
+        new Vector3(0.0f, 1.0f, 0.0f),
+        new Vector3(0.0f, -1.0f, 0.0f),
+        new Vector3(-1.0f, 0.0f, 0.0f),
+        new Vector3(1.0f, 0.0f, 0.0f)
     };
 
     public static readonly int[,] voxelTris = new int[6,6] {
@@ -32,6 +44,6 @@ public static class VoxelData
         new Vector2(1.0f, 0.0f),
         new Vector2(1.0f, 0.0f),
         new Vector2(0.0f, 1.0f),
-        new Vector2(1.0f, 1.0f),
+        new Vector2(1.0f, 1.0f)
     };
 }
